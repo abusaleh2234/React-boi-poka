@@ -1,11 +1,12 @@
-import React from 'react';
+import { Link } from "react-router";
 
 const Book = ({book}) => {
-    const {author,image,bookName,publisher,category,rating} =book
+    const {author,image,bookName,publisher,category,rating,bookId} =book
     return (
-        <div className="card flex-col bg-base-100 shadow-sm">
+        <Link to={`bookDetails/${bookId}`}>
+            <div className="card flex-col bg-base-100 shadow-sm">
             <figure className='p-6'>
-                <img className='py-8 h-svh px-24 bg-gray-100 rounded-xl'
+                <img className='py-8 px-24 bg-gray-100 rounded-xl'
                     src={image}
                     alt="Shoes" />
             </figure>
@@ -22,6 +23,7 @@ const Book = ({book}) => {
                 </div>
             </div>
         </div>
+        </Link>
     );
 };
 
