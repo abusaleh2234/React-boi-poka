@@ -15,6 +15,7 @@ const addStoredBook = (id) => {
 
     if (storedBook.includes(id)) {
         alert("This book is already exist")
+        return
     }
     else {
         storedBook.push(id)

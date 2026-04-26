@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from 'react-router';
 import { addStoredBook } from '../../utilits/utilits';
+import Swal from 'sweetalert2';
 
 const BookDetails = () => {
     const { id } = useParams()
@@ -14,6 +15,11 @@ const BookDetails = () => {
     const handleReadBook = (id) => {
         // console.log(id);
         addStoredBook(id)
+        Swal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+        });
     }
 
     return (
